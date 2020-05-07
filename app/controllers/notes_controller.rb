@@ -1,11 +1,10 @@
 class NotesController < ApplicationController
 
     def create
-        # @blog = Blog.find(params[:blog_id])
-        # @note = @blog.notes.create(params[:note].permit(:text_field))
-
-        @note = Note.create(user_id: current_user.id, blog_id: @blog.id, text_field: :text)
-        #add blog_id and user_id to create
+        
+        Note.create(user_id: current_user.id, blog_id: params[:blog_id], text_field: params[:text_field])
+        redirect_to blogs_path
+        
     end
 
     # def destroy

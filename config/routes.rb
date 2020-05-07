@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get "/", to: "pages#home", as: "root"
 
     get '/blogs', to: 'blogs#index', as: 'blogs'
-    post '/blogs', to: 'blogs#create'
+    post '/blogs', to: 'blogs#create', as: "create_blog"
     get '/blogs/new', to: 'blogs#new', as: 'new_blog'
     get '/blogs/:id', to: 'blogs#show', as: 'blog'
     put '/blogs/:id', to: 'blogs#update'
@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     delete '/blogs/:id', to: 'blogs#destroy', as: 'destroy_blog'
     get '/blogs/:id/edit', to: 'blogs#edit', as: 'edit_blog'
     
+    post '/notes', to: 'notes#create', as: 'create_note'
+
   end
