@@ -1,7 +1,13 @@
-<h1>All Blogs</h1>
+<h1 class = "center">All Blogs</h1>
 
+<div class="blogs">
 <% @blog.each do |blog| %>
-    <li><%= link_to  "#{blog.title}", blog_path(blog.id) %></li>
-     <li><%= blog.description %> </li>
+      <div class="blog">
+      <div class="col-md-3">
+      
+     <span class="heading"><li><%= link_to  "#{blog.title}", blog_path(blog.id) %></li></span>
+      <li><%= blog.description %> </li>
+    </div>
+    </div>
 
 <%end%>
