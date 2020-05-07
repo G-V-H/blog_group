@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   
 
   def index
-    @blog = Blog.all
+    @blog = Blog.all.order(created_at: :desc)
   end
 
   def new
@@ -29,9 +29,11 @@ class BlogsController < ApplicationController
   end
   
   def update
+    @blog = Blog.update(params[:id], blog_params)
+    
     if @blog.update(blog_params)
      flash[:notice] = "Blog was updated"
-     redirect_to blog_path(@blog)
+     redirect_to blogs_path
     else
      flash[:notice] = "Blog was not updated"
      render 'edit'
@@ -41,11 +43,9 @@ class BlogsController < ApplicationController
   def edit
   
   end
-  
-  
-  
+
   def destroy
-    @blog.destroy
+    Blog.find_by_id(params[:id]).destroy
     flash[:notice] = "Blog post was deleted"
     redirect_to blogs_path
   end
@@ -57,8 +57,15 @@ class BlogsController < ApplicationController
      params.require(:blog).permit(:title, :description)
     end
   
-    def set_blog
+  def set_blog
      @blog = Blog.find(params[:id])
+  end
+
+  def set_user_blog
+    @blog = current_user.blogs.find_by_id(params[:id])
+    if @blog == nil
+      redirect_to blogs_path
     end
+  end
   
 end

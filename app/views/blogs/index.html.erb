@@ -1,8 +1,8 @@
 <h1>All Blogs</h1>
 
 <% @blog.each do |blog| %>
-    
-    <li><%=blog.title%></li>
-    <li><%=blog.description%></li>
+    <li><%= link_to  "#{blog.title}", blog_path(blog.id) %></li>
+     <li><%= blog.description %> </li>
+
     
 <%end%>
