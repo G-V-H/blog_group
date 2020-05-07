@@ -3,7 +3,7 @@ class NotesController < ApplicationController
     def create
         
         Note.create(user_id: current_user.id, blog_id: params[:blog_id], text_field: params[:text_field])
-        redirect_to blogs_path
+        redirect_to blog_path(params[:blog_id])
         
     end
 
