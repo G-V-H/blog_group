@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
   end
   
   def show
-  
+    @notes = Note.all
   end
   
   def update
