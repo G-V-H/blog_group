@@ -1,4 +1,8 @@
-<h1>Blogs#index</h1>
-<p>Find me in app/views/blogs/index.html.erb</p>
+<h1>All Blogs</h1>
 
-<%= link_to "edit", edit_blog_path(blog.id) if current_user.id == blog.id %>
+<% @blog.each do |blog| %>
+    
+    <li><%=blog.title%></li>
+    <li><%=blog.description%></li>
+    
+<%end%>

@@ -3,18 +3,24 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show]
   before_action :set_user_blog, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
+  
+
+  def index
+    @blog = Blog.all
+  end
 
   def new
     @blog = Blog.new
   end
   
   def create
-    @blog = Blog.new(blog_params)
-    if @blog.save
-     flash[:notice] = "Blog post was successfully created"
-     redirect_to blog_path(@blog)
+
+    @blog = current_user.blogs.create(blog_params)
+    
+    if @blog.errors.any?
+      render "new"
     else
-     render 'new'
+      redirect_to blogs_path
     end
   end
   
@@ -36,9 +42,7 @@ class BlogsController < ApplicationController
   
   end
   
-  def index
-    @blog = Blog.all
-  end
+  
   
   def destroy
     @blog.destroy
