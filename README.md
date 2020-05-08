@@ -33,3 +33,7 @@ Comments
 - user:reference
 - blog:reference
 - comment:text
+
+
+# ERD
+![ERD DIAGRAM](link-to-image)
