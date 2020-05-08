@@ -12,14 +12,19 @@
     <button class= "button2"><%= link_to "edit", edit_blog_path(@blog.id) %> </button>
     <% end %> 
 <% end %>
+<br>
+<br>
+<br>
+
 <div>
    
 
 
  <%= form_with model: @note, url: create_note_path, local: true, method: "post" do |form| %>
 
-    <%= form.label :comment %>
+    <%= form.label :"Enter your comment here"%>
     <%= form.text_field :text_field %>
+    
     <%= form.hidden_field :blog_id, :value => @blog.id %>
     <%= submit_tag "submit" %>
 
