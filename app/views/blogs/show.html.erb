@@ -26,7 +26,10 @@
 <h3> Comments </h3>
 <% @notes.each do |note| %>
     <% if note.blog_id == @blog.id %>
+     <ul class ="comment-list">
         <li> <%= User.find(note.user_id).email %> </li>
+    
        <li> <%= note.text_field %> </li>
+    </ul>
     <% end %> 
 <% end %>
