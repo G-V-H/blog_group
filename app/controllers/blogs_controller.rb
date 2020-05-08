@@ -14,7 +14,6 @@ class BlogsController < ApplicationController
   end
   
   def create
-
     @blog = current_user.blogs.create(blog_params)
     
     if @blog.errors.any?
