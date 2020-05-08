@@ -34,6 +34,8 @@ Comments
 - blog:reference
 - comment:text
 
+#Link to app
+https://dry-forest-52919.herokuapp.com/users/sign_in
 
 # ERD
 ![ERD DIAGRAM](/app/assets/images/ERD.png)
