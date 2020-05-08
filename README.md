@@ -36,4 +36,4 @@ Comments
 
 
 # ERD
-![ERD DIAGRAM](/app/assets/iamges/ERD.png)
+![ERD DIAGRAM](/app/assets/images/ERD.png)
