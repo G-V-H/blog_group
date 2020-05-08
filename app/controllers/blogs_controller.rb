@@ -14,7 +14,6 @@ class BlogsController < ApplicationController
   end
   
   def create
-
     @blog = current_user.blogs.create(blog_params)
     
     if @blog.errors.any?
@@ -54,7 +53,7 @@ class BlogsController < ApplicationController
   private
     
   def blog_params
-     params.require(:blog).permit(:title, :description)
+     params.require(:blog).permit(:title, :description, :picture)
     end
   
   def set_blog

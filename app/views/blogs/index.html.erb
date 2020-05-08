@@ -4,7 +4,7 @@
 <% @blog.each do |blog| %>
       <div class="blog">
       <div class="col-md-3">
-      
+      <%= image_tag blog.picture if blog.picture.attached? %>
      <span class="heading"><li><%= link_to  "#{blog.title}", blog_path(blog.id) %></li></span>
       <li><%= blog.description %> </li>
     </div>
