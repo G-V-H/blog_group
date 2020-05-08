@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog_group Rails Hackathon Project
 
-Things you may want to cover:
+# Ideas
 
-* Ruby version
+- Create a blog
+- Make a comment on blog
 
-* System dependencies
+# Scope
 
-* Configuration
+A simple web app that can create, update and delete blog, every blog every blog associate with user, has a comment section where every user can leave a comment.
 
-* Database creation
+# Requirements
 
-* Database initialization
+User
 
-* How to run the test suite
+- email:string
+- passsword:string
 
-* Services (job queues, cache servers, search engines, etc.)
+Blog
 
-* Deployment instructions
+- title:string
+- description:text
+- image:active_storage/amazon s3
 
-* ...
+Comment
+
+- user:reference
+- comment:text
